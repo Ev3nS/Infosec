@@ -48,3 +48,15 @@ Using **smbclient \\\\10.10.10.27\\backups** we can connect to this share.
 We now have access to a config file **prod.dtsConfig** that  can be downloaded with: 
 **get prod.dtsConfig**.
 The file was actually a lucky hit as it contains information about the backend database and also an username and password pair which can be used to gain a foothold on the box.
+
+## Obtaining a reverse shell
+
+I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
+
+The command line goes as it follows: 
+**python mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth**
+
+_Note:  "-windows-auth" flag is very important since w/o it the shell won't be able to connect to the database._
+
+This lands us in a what appears to be a SQL shell, running a few SQL commands seem to prove my hypothesis, now as with any other tool that you are not quite sure how it's supposed to be run, typing HELP is always a good option ;).
+
