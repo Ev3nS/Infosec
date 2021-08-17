@@ -9,10 +9,10 @@ This one was a classic, the room revolves around a misconfiguration in mssql tha
 
 ### Starting with a port scan:
 First we do a fast scan in order to identify what ports are up and running:
-1. nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt
+1. **nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt**
 
 And after that we run a full scan on the ports that we have identified:
-2. nmap 10.10.10.27 -p 135,139,445 -sVC -O -v -oA FoundPorts.txt
+2. **nmap 10.10.10.27 -p 135,139,445 -sVC -O -v -oA FoundPorts.txt**
 
 which gives us the following output:
 
