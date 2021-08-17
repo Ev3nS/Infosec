@@ -44,3 +44,8 @@ SMB1 disabled -- no workgroup available
 
 Looks like we have found quite a few shares, even without using a password.
 The most interesting share is "backups" which is also the only non-default share.
+
+Using **smclient \\\\10.10.10.27\\backups** we can connect to this share.
+
+Looks like we found an interesting config file **prod.dtsConfig**, we can download the file with: 
+> get prod.dtsConfig
