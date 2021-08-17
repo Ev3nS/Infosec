@@ -7,10 +7,10 @@ This one was a classic, the room revolves around a misconfiguration in mssql tha
 
 ### Starting with a port scan:
 First we do a fast scan in order to identify what ports are up and running:
-1. **nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt**
+**nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt**
 
 And after that we run a full scan on the ports that we have identified:
-2. **nmap 10.10.10.27 -p 135,139,445 -sVC -O -v -oA FoundPorts.txt**
+ **nmap 10.10.10.27 -p 135,139,445 -sVC -O -v -oA FoundPorts.txt**
 
 which gives us the following output:
 
@@ -28,21 +28,23 @@ We can check the running services and see that the running OS is Windows. Even m
 
 ## The SMB share
 
-Having port 445 up hints me to try to connect HTB Archetype using smb.
+Having port 445 up hints me to try to connect to HTB Archetype using smb.
 
 **smbclient -L 10.10.10.27**
-	 Sharename       Type      Comment
-    	---------       ----      -------
-    	ADMIN$          Disk      Remote Admin
-    	backups         Disk
-   		C$              Disk      Default share
-    	IPC$            IPC       Remote IPC
-		SMB1 disabled -- no workgroup available
+
+	Sharename       Type      Comment
+    ---------       ----      -------
+    ADMIN$          Disk      Remote Admin
+    backups         Disk
+    C$              Disk      Default share
+    IPC$            IPC       Remote IPC
+	SMB1 disabled -- no workgroup available
 
 Looks like we have found quite a few shares, even without using a password.
 The most interesting share is "**backups**" which is also the only non-default share.
 
-Using **smblient \\\\10.10.10.27\\backups** we can connect to this share.
+Using **smbclient \\\\10.10.10.27\\backups** we can connect to this share.
 
-It seems we have access to a config file **prod.dtsConfig** that we can download with: 
-**get prod.dtsConfig**
+We now have access to a config file **prod.dtsConfig** that  can be downloaded with: 
+**get prod.dtsConfig**.
+The file was actually a lucky hit as it contains information about the backend database and also an username and password pair which can be used to gain a foothold on the box.
