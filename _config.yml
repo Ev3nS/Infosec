@@ -12,7 +12,6 @@ description: Cybersecurity and CTFs
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars.githubusercontent.com/u/61091047?s400&u=107a814e4e10150d43de7681eb7d2ffcf28e8cb9&v=4
-banner: <script src="https://tryhackme.com/badge/39696"></script>
 
 #
 # Flags below are optional
@@ -53,7 +52,7 @@ url:
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: "/Infosec"
+baseurl: ""
 
 #
 # !! You don't need to change any of the configuration flags below !!
