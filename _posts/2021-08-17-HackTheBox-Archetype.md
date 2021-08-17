@@ -32,10 +32,6 @@ Having port 445 up hints me to try to connect to HTB Archetype using smb.
 
 Looks like we have found quite a few shares, even without using a password.
 The most interesting share is "**backups**" which is also the only non-default share.
-
-
-
-
 Using **smbclient \\\\10.10.10.27\\backups** we can connect to this share.
 
 We now have access to a config file **prod.dtsConfig** that  can be downloaded with: 
@@ -51,8 +47,7 @@ The file was actually a lucky hit as it contains information about the backend d
 
 I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
 
- ### Installing steps
-
+### Installing steps
 1. cd /opt  && sudo git clone https://github.com/SecureAuthCorp/impacket.git
 2. cd impacket/
 3. sudo pip3 install .
