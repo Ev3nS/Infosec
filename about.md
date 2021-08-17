@@ -2,14 +2,9 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+Self taught romanian Cyber Security and Bug Bounty Enthusiast with a few years of CTF challenges and a drive to improve.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+[sorin5@protonmail.com](mailto:sorin5@protonmail.com)
