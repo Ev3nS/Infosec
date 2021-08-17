@@ -8,18 +8,18 @@ This one was a classic, the room revolves around a misconfiguration in mssql tha
 ### Starting with a port scan:
 First we do a fast scan in order to identify what ports are up and running:
 **nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt**
-![nmap1]({{site.baseurl}}/_posts/nmap.png)
+![nmap1](https://github.com/Ev3nS/Infosec/tree/master/images/nmap.png)
 
 
 And after that we run a full scan on the ports that we have identified:
  **sudo nmap 10.10.10.27 -p 135,139,445,1433,5985,47001 -sVC -O -v -oA FoundPorts.txt**
 
 which gives us the following output:
-![nmap2]({{site.baseurl}}/_posts/nmap2.png)
+![nmap2](https://github.com/Ev3nS/Infosec/tree/master/images/nmap2.png)
 
 We can check the running services and see that the running OS is Windows. Even more, it seems to be running a Microsoft Windows Server between version 2008 R2 and 2012 which are known to have quite a handful of exploits. Only in 2021 there have been [186 exploits](https://stack.watch/product/microsoft/windows-server-2008/#:~:text=In%202021%20there%20have%20been,had%20382%20security%20vulnerabilities%20published.&text=However%2C%20the%20average%20CVE%20base,2021%20is%20greater%20by%200.42.) with an average CVE of 7.9 out of 10.
 
-We also see WinRM (Windows Remote Management) that is a Microsoft implementation of WS-Management Protocol. A standard SOAP based protocol that allows hardware and operating systems from different vendors to interoperate.
+We also see **WinRM** (Windows Remote Management) that is a Microsoft implementation of WS-Management Protocol. A standard SOAP based protocol that allows hardware and operating systems from different vendors to interoperate.
 [EvilWinRm](https://github.com/Hackplayers/evil-winrm) can be used on any Microsoft Windows Servers with this feature enabled (usually at port 5985), of course only if you have credentials and permissions to use it. So we can say that it could be used in a post-exploitation hacking/pentesting phase. The purpose of this program is to provide nice and easy-to-use features for hacking. It can be used with legitimate purposes by system administrators as well but the most of its features are focused on hacking/pentesting stuff. 
 
 ## The SMB share
@@ -27,7 +27,7 @@ We also see WinRM (Windows Remote Management) that is a Microsoft implementation
 Having port 445 up hints me to try to connect to HTB Archetype using smb.
 
 **smbclient -L 10.10.10.27**
-![smbp.png]({{site.baseurl}}/_posts/smbp.png)
+![smbp.png](https://github.com/Ev3nS/Infosec/tree/master/images/smbp.png)
 
 
 Looks like we have found quite a few shares, even without using a password.
@@ -40,11 +40,11 @@ Using **smbclient \\\\10.10.10.27\\backups** we can connect to this share.
 
 We now have access to a config file **prod.dtsConfig** that  can be downloaded with: 
 **get prod.dtsConfig**.
-![smb2.png]({{site.baseurl}}/_posts/smb2.png)
+![smb2.png](https://github.com/Ev3nS/Infosec/tree/master/images/smb2.png)
 
 The file was actually a lucky hit as it contains information about the backend database and also an username and password pair which can be used to gain a foothold on the box.
 
-![file.png]({{site.baseurl}}/_posts/file.png)
+![file.png](https://github.com/Ev3nS/Infosec/tree/master/images/file.png)
 
 
 ## Obtaining a reverse shell
