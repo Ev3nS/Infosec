@@ -51,16 +51,15 @@ The file was actually a lucky hit as it contains information about the backend d
 
 I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
 
-### Installing steps
+ ### Installing steps
 
 1. cd /opt  && sudo git clone https://github.com/SecureAuthCorp/impacket.git
 2. cd impacket/
 3. sudo pip3 install .
 4. sudo python3 setup.py install
 
-
-The command line goes as it follows: 
-**python mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth**
+The command line goes as it follows:  
+ **python mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth**
 
 _Note:  "-windows-auth" flag is very important since w/o it the shell won't be able to connect to the database._
 
