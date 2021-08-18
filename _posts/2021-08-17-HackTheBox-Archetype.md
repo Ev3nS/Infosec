@@ -70,7 +70,7 @@ This lands us in a what appears to be a SQL shell, running a few SQL commands se
 
 As it looks like we have enough privileges to enable xp_cmdshell, so we go on and type **enable_xp_cmdshell;** and after that **reconfigure;**.
 
-Now in order to see if we can run commands i'm going to try the following syntax:**xp_cmdshell powershell whoami /priv**, and this sure enough returns the Privileges information of the current user.
+Now in order to see if we can run commands i'm going to try the following syntax: **xp_cmdshell powershell whoami /priv**, and this sure enough returns the Privileges information of the current user.
 ![shrll1.png]({{site.baseurl}}/_posts/shrll1.png)
 
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
