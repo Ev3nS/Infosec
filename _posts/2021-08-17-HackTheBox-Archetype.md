@@ -7,7 +7,6 @@ This one was a classic, the room revolves around a misconfiguration in mssql tha
 
   <br>
   <br>
-  <br>
   
 ## Information Gathering
 ---
