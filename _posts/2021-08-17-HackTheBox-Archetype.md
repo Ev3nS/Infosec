@@ -1,15 +1,18 @@
 ---
 published: true
 ---
-This one was a classic, the room revolves around a misconfiguration in mssql that allows the user to enable_xp_cmdshell which opens a path to achieve remote code execution on the machine via xp_cmdshell.
 
+This one was a classic, the room revolves around a misconfiguration in mssql that allows the user to enable_xp_cmdshell which opens a path to achieve remote code execution on the machine via xp_cmdshell.  
+
+
+    
 ## Information Gathering
+---
 
 ### Starting with a port scan:
 First we do a fast scan in order to identify what ports are up and running:   
 **nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt**
 ![nmap.png]({{site.baseurl}}/_posts/nmap.png)
-
 
 
 And after that we run a full scan on the ports that we have identified:    
@@ -25,12 +28,11 @@ We also see **WinRM** (Windows Remote Management) that is a Microsoft implementa
 [EvilWinRm](https://github.com/Hackplayers/evil-winrm) can be used on any Microsoft Windows Servers with this feature enabled (usually at port 5985), of course only if you have credentials and permissions to use it. So we can say that it could be used in a post-exploitation hacking/pentesting phase. The purpose of this program is to provide nice and easy-to-use features for hacking. It can be used with legitimate purposes by system administrators as well but the most of its features are focused on hacking/pentesting stuff. 
 
 ## The SMB share
-
+---
 Having port 445 up hints me to try to connect to HTB Archetype using smb.
 
 **smbclient -L 10.10.10.27**
 ![smbp.png]({{site.baseurl}}/_posts/smbp.png)
-
 
 
 Looks like we have found quite a few shares, even without using a password.
@@ -48,7 +50,7 @@ The file was actually a lucky hit as it contains information about the backend d
 
 
 ## Obtaining a foothold
-
+---
 I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
 
 ### Installing steps
@@ -74,8 +76,7 @@ Now in order to see if we can run commands i'm going to try the following syntax
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
 ![FlagUser.png]({{site.baseurl}}/_posts/flag1.png)   
 
+
 ## Escalating to a reverse shell
-
-As of now, we have full access to an account that we know it can Impersonate Tokens 
-
-
+---
+As of now, we have full access to an account that we know it can Impersonate Tokens
