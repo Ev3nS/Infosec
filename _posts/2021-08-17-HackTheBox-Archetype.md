@@ -127,3 +127,12 @@ Now as we have the credentials we can use a [python tool for PsExec](https://git
 
 All that is left to do now is to grab the root flag and we're done.    
 ![rootflang.png]({{site.baseurl}}/images/root2.png)
+
+## Conclusions
+---
+On an ending note, i really liked this box for the fact that it promotes a good pentesting methodology, it's backbone is just a lot of enumeration and googling  and it offers a nice corelation between different services.   
+
+
+
+
+
