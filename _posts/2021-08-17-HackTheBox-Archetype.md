@@ -49,6 +49,7 @@ The file was actually a lucky hit as it contains information about the backend d
 ![file.png]({{site.baseurl}}/_posts/file.png)
 
 
+
 ## Obtaining a foothold
 ---
 I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
