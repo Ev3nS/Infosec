@@ -5,14 +5,10 @@ layout: post
 
 This one was a classic, the room revolves around a misconfiguration in mssql that allows the user to enable_xp_cmdshell which opens a path to achieve remote code execution on the machine via xp_cmdshell. And a later exploitation of an unsecured important file that led to full access on the machine.  
 
-
-<center>
   <br>
   <br>
   <br>
-<script src="https://tryhackme.com/badge/39696"></script>
-</center>
-
+  
 ## Information Gathering
 ---
 ### Starting with a port scan:
@@ -147,3 +143,8 @@ All that is left to do now is to grab the root flag and we're done.
 ## Conclusions
 ---
 On an ending note, i really liked this box for the fact that it promotes a good pentesting methodology, it's backbone is just a lot of enumeration and googling  and it offers a nice corelation between different services.
+
+---
+<center>
+<script src="https://tryhackme.com/badge/39696"></script>
+</center>
