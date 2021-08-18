@@ -37,7 +37,7 @@ Having port 445 up hints me to try to connect to HTB Archetype using smb.
 
 
 Looks like we have found quite a few shares, even without using a password.
-The most interesting share is "**backups**" which is also the only non-default share.
+The most interesting share is "**backups**" which is also the only non-default share.  
 Using **smbclient \\\\10.10.10.27\\backups** we can connect to this share.
 
 We now have access to a config file **prod.dtsConfig** that  can be downloaded with: 
