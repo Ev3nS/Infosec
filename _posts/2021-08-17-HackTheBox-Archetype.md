@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 <center>
 <script src="https://tryhackme.com/badge/39696"></script>
