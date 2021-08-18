@@ -114,5 +114,16 @@ As of now, we have full access to a low privileged account, so a good thing to d
 
 Once you gain access to a shell in general it is good to check a few things: what privileges you have, what processes are running, what is your ip, who else is on the box, what files you have access to, any weird files/binaries/executables that shouldn't be there, are there any notes or secret files that are left unprotected? what's the bash/batch history and so on.
 
-Fortunately while digging for the last accessed files i've found this peculiar file lying around 		 	C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt
+Fortunately while digging for the last accessed files i've found this peculiar file lying around:  		 
 
+![oddfile.png]({{site.baseurl}}/images/oddfile.png)
+
+As it looks like this file was actually pretty useful as it leaks the credentials of the administrator account:  
+![creds.png]({{site.baseurl}}/images/creds.png)
+
+
+Now as we have the credentials we can use a [python tool for PsExec](https://github.com/SecureAuthCorp/impacket/blob/master/examples/psexec.py) in order to remotely connect to the box as administrator:
+![root.png]({{site.baseurl}}/Images/root.png)
+
+All that is left to do now is to grab the root flag and we're done.    
+![rootflang.png]({{site.baseurl}}/images/root2.png)
