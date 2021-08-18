@@ -7,4 +7,4 @@ published: true
 
 Self taught romanian Cyber Security and Bug Bounty Enthusiast with a few years of CTF challenges and a drive to improve.
 
-[sorin5@protonmail.com](mailto:ev3ns@protonmail.com)
+[ev3ns@protonmail.com](mailto:ev3ns@protonmail.com)
