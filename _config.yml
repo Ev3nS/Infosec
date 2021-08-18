@@ -16,7 +16,8 @@ avatar: https://avatars.githubusercontent.com/u/61091047?s400&u=107a814e4e10150d
 #
 # Flags below are optional
 #
-
+color_theme: dark
+favicon: images/favicon.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
