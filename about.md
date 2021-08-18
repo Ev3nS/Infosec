@@ -8,8 +8,3 @@ published: true
 Self taught romanian Cyber Security and Bug Bounty Enthusiast with a few years of CTF challenges and a drive to improve.
 
 [sorin5@protonmail.com](mailto:ev3ns@protonmail.com)
-<div>
-<script style="float:right;" src="https://tryhackme.com/badge/39696"></script>
-</div>
-
-
