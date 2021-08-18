@@ -1,6 +1,6 @@
 ---
 published: true
-layout: post
+layout: default
 ---
 
 This one was a classic, the room revolves around a misconfiguration in mssql that allows the user to enable_xp_cmdshell which opens a path to achieve remote code execution on the machine via xp_cmdshell. And a later exploitation of an unsecured important file that led to full access on the machine.  
