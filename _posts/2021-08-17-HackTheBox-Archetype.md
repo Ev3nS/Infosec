@@ -72,8 +72,12 @@ This lands us in a what appears to be a SQL shell, running a few SQL commands se
 
 As it looks like we have enough privileges to enable xp_cmdshell, so we go on and type **enable_xp_cmdshell;** and after that **reconfigure;**.
 
+
+
 Now in order to see if we can run commands i'm going to try the following syntax: **xp_cmdshell powershell whoami /priv**, and this sure enough returns the Privileges information of the current user.
-![shrll1.png]({{site.baseurl}}/images/shrll1.png)
+![shrll1.png]({{site.baseurl}}/images/shrll1.png)  
+
+_Note: Pay attention to SetImpersonatePrivilege as this will be important later, also it helps reading about windows tokens if you're interested in privilege escalation techniques_
 
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
 ![FlagUser.png]({{site.baseurl}}/images/flag1.png)
@@ -107,3 +111,4 @@ The way i'm going to do it is by uploading an [old windows netcat executable](ht
 ## Escalating to a root shell
 ---
 As of now, we have full access to an account that we know it can Impersonate Tokens, which means that we can take ownage of a process run by a higher privileged user on the system and create a privileged shell. This can be done via [Juicy-Potato exploit](https://github.com/ohpe/juicy-potato).
+
