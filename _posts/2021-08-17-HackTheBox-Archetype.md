@@ -6,13 +6,13 @@ This one was a classic, the room revolves around a misconfiguration in mssql tha
 ## Information Gathering
 
 ### Starting with a port scan:
-First we do a fast scan in order to identify what ports are up and running:
+First we do a fast scan in order to identify what ports are up and running:   
 **nmap 10.10.10.27 -p- -Pn --min-rate 1500 -vvv -oN AllPorts.txt**
 ![nmap.png]({{site.baseurl}}/_posts/nmap.png)
 
 
 
-And after that we run a full scan on the ports that we have identified:
+And after that we run a full scan on the ports that we have identified:    
  **sudo nmap 10.10.10.27 -p 135,139,445,1433,5985,47001 -sVC -O -v -oA FoundPorts.txt**
 
 which gives us the following output:
@@ -47,8 +47,7 @@ The file was actually a lucky hit as it contains information about the backend d
 ![file.png]({{site.baseurl}}/_posts/file.png)
 
 
-
-## Obtaining a reverse shell
+## Obtaining a foothold
 
 I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
 
@@ -73,6 +72,10 @@ Now in order to see if we can run commands i'm going to try the following syntax
 ![shrll1.png]({{site.baseurl}}/_posts/shrll1.png)
 
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
-![FlagUser.png]({{site.baseurl}}/_posts/flag1.png)
+![FlagUser.png]({{site.baseurl}}/_posts/flag1.png)   
+
+## Escalating to a reverse shell
+
+As of now, we have full access to an account that we know it can Impersonate Tokens 
 
 
