@@ -77,7 +77,7 @@ As it looks like we have enough privileges to enable xp_cmdshell, so we go on an
 Now in order to see if we can run commands i'm going to try the following syntax: **xp_cmdshell powershell whoami /priv**, and this sure enough returns the Privileges information of the current user.
 ![shrll1.png]({{site.baseurl}}/images/shrll1.png)  
 
-_Note: Pay attention to SetImpersonatePrivilege as this will be important later, also it helps reading about windows tokens if you're interested in privilege escalation techniques_
+_Note: Pay attention to [SeImpersonatePrivilege](https://steflan-security.com/linux-privilege-escalation-token-impersonation/) as this will be important later, also it helps reading about [exploitable windows tokens](https://steflan-security.com/linux-privilege-escalation-token-impersonation/) if you're interested in privilege escalation techniques_
 
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
 ![FlagUser.png]({{site.baseurl}}/images/flag1.png)
