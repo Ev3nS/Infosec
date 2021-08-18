@@ -32,7 +32,7 @@ We also see **WinRM** (Windows Remote Management) that is a Microsoft implementa
 ---
 Having port 445 up hints me to try to connect to HTB Archetype using smb.
 
-**smbclient -L 10.10.10.27**
+**smbclient -L 10.10.10.27**  
 ![smbp.png]({{site.baseurl}}/images/smbp.png)
 
 
