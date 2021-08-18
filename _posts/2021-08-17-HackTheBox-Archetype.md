@@ -110,5 +110,9 @@ The way i'm going to do it is by uploading an [old windows netcat executable](ht
 
 ## Escalating to a root shell
 ---
-As of now, we have full access to an account that we know it can Impersonate Tokens, which means that we can take ownage of a process run by a higher privileged user on the system and create a privileged shell. This can be done via [Juicy-Potato exploit](https://github.com/ohpe/juicy-potato).
+As of now, we have full access to a low privileged account, so a good thing to do is to enumerate what you can do with that account on the system. Also we know from the SMB chapter that this user can Impersonate Tokens, which means that we can take ownage of a process run by a higher privileged user on the system and create a privileged shell. This can be done via [Juicy-Potato exploit](https://github.com/ohpe/juicy-potato). But for the sake of this room i will go with an easier path, as this vulnerability will be exploited in a later post.
+
+Once you gain access to a shell in general it is good to check a few things: what privileges you have, what processes are running, what is your ip, who else is on the box, what files you have access to, any weird files/binaries/executables that shouldn't be there, are there any notes or secret files that are left unprotected? what's the bash/batch history and so on.
+
+Fortunately while digging for the last accessed files i've found this peculiar file lying around 		 	C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt
 
