@@ -114,7 +114,7 @@ As of now, we have full access to a low privileged account, so a good thing to d
 
 Once you gain access to a shell in general it is good to check a few things: what privileges you have, what processes are running, what is your ip, who else is on the box, what files you have access to, any weird files/binaries/executables that shouldn't be there, are there any notes or secret files that are left unprotected? what's the bash/batch history and so on.
 
-Fortunately while digging for the last accessed files i've found this peculiar file lying around:  		 
+Fortunately, while digging for the last accessed files i've found this peculiar file lying around:  		 
 
 ![oddfile.png]({{site.baseurl}}/images/oddfile.png)
 
