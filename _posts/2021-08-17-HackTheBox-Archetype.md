@@ -6,6 +6,7 @@ This one was a classic, the room revolves around a misconfiguration in mssql tha
 
 
 
+
 ## Information Gathering
 ---
 ### Starting with a port scan:
@@ -25,6 +26,7 @@ We can check the running services and see that the running OS is Windows. Even m
 
 We also see **WinRM** (Windows Remote Management) that is a Microsoft implementation of WS-Management Protocol. A standard SOAP based protocol that allows hardware and operating systems from different vendors to interoperate.
 [EvilWinRm](https://github.com/Hackplayers/evil-winrm) can be used on any Microsoft Windows Servers with this feature enabled (usually at port 5985), of course only if you have credentials and permissions to use it. So we can say that it could be used in a post-exploitation hacking/pentesting phase. The purpose of this program is to provide nice and easy-to-use features for hacking. It can be used with legitimate purposes by system administrators as well but the most of its features are focused on hacking/pentesting stuff. 
+
 
 
 
@@ -51,6 +53,7 @@ The file was actually a lucky hit as it contains information about the backend d
 
 
 
+
 ## Obtaining a foothold
 ---
 I am going to use the **impacket mssql client** from [SecureAuthCorp](https://github.com/SecureAuthCorp/impacket) in order to connect to the database.
@@ -71,7 +74,6 @@ This lands us in a what appears to be a SQL shell, running a few SQL commands se
 ![sql.png]({{site.baseurl}}/images/sql.png)
 
 As it looks like we have enough privileges to enable xp_cmdshell, so we go on and type **enable_xp_cmdshell;** and after that **reconfigure;**.
-
 
 
 Now in order to see if we can run commands i'm going to try the following syntax: **xp_cmdshell powershell whoami /priv**, and this sure enough returns the Privileges information of the current user.
@@ -127,6 +129,8 @@ Now as we have the credentials we can use a [python tool for PsExec](https://git
 
 All that is left to do now is to grab the root flag and we're done.    
 ![rootflang.png]({{site.baseurl}}/images/root2.png)
+
+
 
 ## Conclusions
 ---
