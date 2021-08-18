@@ -33,8 +33,9 @@ We can check the running services and see that the running OS is Windows. Even m
 We also see **WinRM** (Windows Remote Management) that is a Microsoft implementation of WS-Management Protocol. A standard SOAP based protocol that allows hardware and operating systems from different vendors to interoperate.
 [EvilWinRm](https://github.com/Hackplayers/evil-winrm) can be used on any Microsoft Windows Servers with this feature enabled (usually at port 5985), of course only if you have credentials and permissions to use it. So we can say that it could be used in a post-exploitation hacking/pentesting phase. The purpose of this program is to provide nice and easy-to-use features for hacking. It can be used with legitimate purposes by system administrators as well but the most of its features are focused on hacking/pentesting stuff. 
 
-
-
+<br>
+<br>
+<br>
 
 ## The SMB share
 ---
@@ -57,8 +58,9 @@ The file was actually a lucky hit as it contains information about the backend d
 
 ![file.png]({{site.baseurl}}/images/file.png)
 
-
-
+<br>
+<br>
+<br>
 
 ## Obtaining a foothold
 ---
@@ -89,9 +91,10 @@ _Note: Pay attention to [SeImpersonatePrivilege](https://steflan-security.com/li
 
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
 ![FlagUser.png]({{site.baseurl}}/images/flag1.png)
- 
 
-
+<br>
+<br>
+<br>
 
 ## Escalating to a reverse shell
 ---
@@ -113,8 +116,9 @@ The way i'm going to do it is by uploading an [old windows netcat executable](ht
 3. Check if we got a hit on our local listener:  
 ![FirstCmdShell.png]({{site.baseurl}}/Images/FirstCmdShell.png)
 
-
-
+<br>
+<br>
+<br>
 
 ## Escalating to a root shell
 ---
@@ -136,7 +140,9 @@ Now as we have the credentials we can use a [python tool for PsExec](https://git
 All that is left to do now is to grab the root flag and we're done.    
 ![rootflang.png]({{site.baseurl}}/images/root2.png)
 
-
+<br>
+<br>
+<br>
 
 ## Conclusions
 ---
