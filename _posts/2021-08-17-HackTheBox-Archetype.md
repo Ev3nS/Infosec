@@ -76,7 +76,8 @@ Now in order to see if we can run commands i'm going to try the following syntax
 ![shrll1.png]({{site.baseurl}}/images/shrll1.png)
 
 Now as we got a foothold we can either try to get a more stable shell, or proceed with this one. But for now this is enough to grab the user flag.
-![FlagUser.png]({{site.baseurl}}/images/flag1.png)   
+![FlagUser.png]({{site.baseurl}}/images/flag1.png)
+ 
 
 
 
