@@ -2,15 +2,16 @@
 published: true
 layout: post
 ---
-<center>
-<script src="https://tryhackme.com/badge/39696"></script>
-</center>
-
 
 This one was a classic, the room revolves around a misconfiguration in mssql that allows the user to enable_xp_cmdshell which opens a path to achieve remote code execution on the machine via xp_cmdshell. And a later exploitation of an unsecured important file that led to full access on the machine.  
 
 
-
+<center>
+  <br>
+  <br>
+  <br>
+<script src="https://tryhackme.com/badge/39696"></script>
+</center>
 
 ## Information Gathering
 ---
